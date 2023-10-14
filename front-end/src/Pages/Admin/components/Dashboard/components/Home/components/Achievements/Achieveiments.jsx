@@ -13,6 +13,8 @@ const Achieveiments = () => {
   };
 
   return (
+    <>
+    <h1>Achieveiments</h1>
     <form onSubmit={(e) => achievload(e)}>
       <div className="achievCards" >
 
@@ -37,6 +39,7 @@ const Achieveiments = () => {
       </div>
       <button>Save</button>
     </form>
+    </>
   )
 };
 

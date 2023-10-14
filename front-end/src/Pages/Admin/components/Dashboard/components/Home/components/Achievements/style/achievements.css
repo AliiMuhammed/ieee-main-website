@@ -16,12 +16,12 @@ form{
 
 .achievCards{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .achievTitle{
     margin: 15px;
-    font-size: xx-large;
+    font-size: x-large;
     font-weight: 600;
     letter-spacing: 2px;
 }
@@ -33,7 +33,7 @@ input[type=number]::-webkit-inner-spin-button {
 input{
     border: none;
     width: 74%;
-    height: 20%;
+    height: 16%;
     text-align: center;
     font-size: x-large;
     font-weight: 500;
@@ -51,7 +51,7 @@ button{
     background: linear-gradient(60deg, rgb(56 62 88) 0%, rgb(37 43 42) 100%);
     font-size: larger;
     color: #bacfe1;
-    align-self: flex-end;
+    align-self: center;
     margin-right: 70px;
     box-shadow: -5px 8px 24px -3px rgb(87 105 189 / 64%);
     
@@ -62,4 +62,8 @@ button:hover{
     box-shadow: -5px 8px 24px -3px rgb(87 105 189 / 64%);
     color:rgb(34, 36, 38) ;
     box-shadow: 2px 3px 29px 15px rgb(87 105 189 / 64%);
+}
+
+h1{
+    text-align: center;
 }

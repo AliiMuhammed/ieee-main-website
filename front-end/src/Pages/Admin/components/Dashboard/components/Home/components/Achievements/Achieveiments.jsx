@@ -3,6 +3,7 @@ import "./style/achievements.css";
 
 const Achieveiments = () => {
 
+
   const events = useRef("");
   const members = useRef("");
   const awards = useRef("");

@@ -1,13 +1,13 @@
 import { Outlet } from "react-router";
-import Navbar from "./Shared/components/Navbar";
-import Footer from "./Shared/components/Footer";
+import AdminNavbar from "./Shared/components/AdminNavbar";
+import AdminFooter from "./Shared/components/AdminFooter";
 
 function App() {
   return (
     <>
-      <Navbar />
+      <AdminNavbar />
       <Outlet />
-      <Footer />
+      <AdminFooter />
     </>
   );
 }

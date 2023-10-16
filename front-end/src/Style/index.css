@@ -101,6 +101,10 @@ a {
     border-color: var(--hover-color);
 }
 
+section {
+    margin: 7rem 0;
+}
+
 /*end glopal rules */
 
 

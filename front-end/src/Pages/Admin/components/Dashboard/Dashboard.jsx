@@ -4,7 +4,6 @@ import "./style/dashboard.css";
 export const Dashboard = () => {
   return (
     <>
-    
       <Outlet />
     </>
   );

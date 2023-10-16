@@ -2,7 +2,6 @@ import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import "../style/sideMenu.css";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { Dropdown } from "react-bootstrap";
 
 import { Link, NavLink } from "react-router-dom";
 // import { getAuthUser, removeAuthUser } from "../../../Helper/Storage";
@@ -39,13 +38,12 @@ function SideMenu({ name, ...props }) {
 
   return (
     <>
-      <Link
+      <button
         onClick={handleShow}
-        to={"/admin/dashboard"}
         className="sideMenu-icon"
       >
         <FaBars />
-      </Link>
+      </button>
       <Offcanvas show={show} onHide={handleClose} {...props}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title className="sideMenu-header">

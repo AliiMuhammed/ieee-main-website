@@ -1,8 +1,7 @@
 .sideMenu-icon {
     width: 2.5rem;
 
-    /*font-size: 2rem;
-    */
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,13 +18,20 @@
     color: var(--hover-color);
 }
 
-.offcanvas.offcanvas-start.show {
-    background-color: var(--main-bg);
-}
 
 .sideMenu-header.offcanvas-title.h5 {
     font-size: 2rem;
     color: var(--main-font-color);
+}
+
+.offcanvas-header .btn-close {
+    background-image: url(../../../Assets/circle.png);
+    background-size: cover;
+    opacity: 1;
+}
+
+.offcanvas {
+    background-color: var(--main-bg) !important;
 }
 
 .links-sideMenu {
@@ -75,6 +81,56 @@
     align-self: center;
     margin: 0 auto;
 
+}
+
+
+.sub-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+}
+
+.sub-menu.open {
+    max-height: 500px;
+    /* Adjust this value based on your content */
+}
+
+.drop-down {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.drop-down-link {
+    color: var(--main-font-color);
+    cursor: pointer;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    padding: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.drop-down-link:hover {
+    color: var(--hover-color);
+}
+
+.drop-down .sub-menu {
+    padding-left: 2rem;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.drop-down .sub-menu a {
+    padding: 0.5rem 1rem;
+    margin-top: 0rem;
 }
 
 /*=============================Responsive===================================*/

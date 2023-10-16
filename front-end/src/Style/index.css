@@ -29,7 +29,8 @@
 body {
     font-family: "Cairo";
     /* Noncompliant; there is no generic font family in the list */
-    background-color: var(--main-bg);
+    margin: 0;
+    padding: 0;
     color: var(--main-font-color);
 }
 
@@ -72,6 +73,32 @@ ul {
 a {
     text-decoration: none;
 
+}
+
+.main-btn {
+    padding: 1rem 2rem;
+    background-color: var(--second-font-color);
+    color: var(--main-font-color);
+    font-size: 1.1rem;
+    border: 2px solid transparent;
+    outline: none;
+    border-radius: var(--main-border-radius);
+    -webkit-border-radius: var(--main-border-radius);
+    -moz-border-radius: var(--main-border-radius);
+    -ms-border-radius: var(--main-border-radius);
+    -o-border-radius: var(--main-border-radius);
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.main-btn:hover {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
 }
 
 /*end glopal rules */

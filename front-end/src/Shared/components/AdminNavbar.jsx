@@ -1,25 +1,43 @@
-import React from "react";
-import user from "../../Assets/user/user.png";
+import { Link } from "react-router-dom";
+// import { getAuthUser } from "../../../Helper/Storage";
+import imgProfile from "../../Assets/user/user.png";
 import logo from "../../Assets/logos/horizontal logo.png";
 import "../style/AdminNavbar.css";
+import SideMenu from "../../Pages/Admin/components/SideMenu";
 const AdminNavbar = () => {
+  // const admin = getAuthUser();
+
   return (
-    <header>
-      <nav>
-        <div className="container">
-          <div className="logo">
-            <img src={logo} alt="ieee logo" />
-          </div>
-          <div className="admin-data">
-            <h2 className="admin-name">Ali muhammed</h2>
-            <div className="admin-img">
-              <img src={user} alt="admin-img" />
-            </div>
-            <button className="main-btn logout-btn">Logout</button>
-          </div>
+    <nav className="Admin-nav">
+      <div className="container nav-container adminNav-container ">
+        <div className="left">
+          <Link to="/admin" className="logo">
+            <img src={logo} alt="logo" />
+          </Link>
         </div>
-      </nav>
-    </header>
+        <div className="right">
+          <div className="admin-data">
+            <div className="admin-img">
+              <img
+                src={
+                  // admin.image === "http://localhost:5000/"
+                  //   ? imgProfile
+                  //   : admin.image
+                  imgProfile
+                }
+                alt=""
+              />
+            </div>
+            <div className="admin-name">
+              {/* <span>{admin.name}</span> */}
+              <span>Ali muhammed</span>
+            </div>
+          </div>
+
+          <SideMenu placement={"start"} name={"start"} />
+        </div>
+      </div>
+    </nav>
   );
 };
 

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import "../style/sideMenu.css";
 import Offcanvas from "react-bootstrap/Offcanvas";
+
 import { Link, NavLink } from "react-router-dom";
 // import { getAuthUser, removeAuthUser } from "../../../Helper/Storage";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +15,16 @@ import { AiFillHome } from "react-icons/ai";
 import imgProfile from "../../../Assets/user/user.png";
 function SideMenu({ name, ...props }) {
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
+  const [showSubMenu, setShowSubMenu] = useState(false);
+
+  const toggleSubMenu = () => {
+    setShowSubMenu(!showSubMenu);
+  };
+
+  const handleClose = () => {
+    setShow(false);
+    setShowSubMenu(false);
+  };
   const handleShow = () => setShow(true);
 
   const navigate = useNavigate();
@@ -28,13 +38,12 @@ function SideMenu({ name, ...props }) {
 
   return (
     <>
-      <Link
+      <button
         onClick={handleShow}
-        to={"/admin/dashboard"}
         className="sideMenu-icon"
       >
         <FaBars />
-      </Link>
+      </button>
       <Offcanvas show={show} onHide={handleClose} {...props}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title className="sideMenu-header">
@@ -88,12 +97,49 @@ function SideMenu({ name, ...props }) {
               </div>
               Contact Us
             </Link>
-            <Link to={"/admin/dashboard/home"} onClick={handleClose}>
-              <div className="icon">
-                <AiFillHome />
+            <div className="drop-down">
+              <div onClick={toggleSubMenu} className="drop-down-link">
+                <div className="icon">
+                  <AiFillHome />
+                </div>
+                Home
               </div>
-              Home
-            </Link>
+              <div className={`sub-menu ${showSubMenu ? "open" : ""}`}>
+                <NavLink
+                  to="/admin/dashboard/home/slogan"
+                  onClick={handleClose}
+                >
+                  Slogan
+                </NavLink>
+                <NavLink to="/admin/dashboard/home/video" onClick={handleClose}>
+                  Video
+                </NavLink>
+                <NavLink
+                  to="/admin/dashboard/home/family"
+                  onClick={handleClose}
+                >
+                  Family
+                </NavLink>
+                <NavLink
+                  to="/admin/dashboard/home/achievements"
+                  onClick={handleClose}
+                >
+                  Achievements
+                </NavLink>
+                <NavLink
+                  to="/admin/dashboard/home/partners"
+                  onClick={handleClose}
+                >
+                  Partners
+                </NavLink>
+                <NavLink
+                  to="/admin/dashboard/home/testimonials"
+                  onClick={handleClose}
+                >
+                  Testimonials
+                </NavLink>
+              </div>
+            </div>
           </div>
 
           {/* Authenticated Routes */}

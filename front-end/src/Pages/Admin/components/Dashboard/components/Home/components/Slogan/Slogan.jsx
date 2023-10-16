@@ -1,15 +1,13 @@
-import React ,{ useState } from "react";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
+import React, { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
 
 // import SloganPopup from "./components/SloganPopup";
 import "./style/slogan.css";
-
+import MainHeader from "../../../../../../../../Shared/components/MainHeader";
 
 export const Slogan = () => {
-  
-
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -17,6 +15,8 @@ export const Slogan = () => {
 
   return (
     <>
+      <MainHeader title={"Branch Slogan"} paragraph={"Here you can update slogan"} />
+
       <h2>old slogan</h2>
       <Button variant="primary" onClick={handleShow}>
         Change
@@ -58,12 +58,6 @@ export const Slogan = () => {
     </>
   );
 
-
-
-
-
-
-
   // const [isOpen, setIsOpen] = useState(false);
 
   // const togglePopup = () => {
@@ -85,14 +79,7 @@ export const Slogan = () => {
   //     )}
   //   </>
   // );
-  
-  
-  
-  
 
-
-
-  
   // const showPopup = () => {
   //   return <SloganPopup />;
   // }

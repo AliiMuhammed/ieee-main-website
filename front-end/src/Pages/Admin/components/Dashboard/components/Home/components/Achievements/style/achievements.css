@@ -26,11 +26,11 @@ form{
     letter-spacing: 2px;
 }
 
-input[type=number]::-webkit-inner-spin-button {
+.achievCard input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
-input{
+.achievCard input{
     border: none;
     width: 74%;
     height: 16%;
@@ -42,7 +42,7 @@ input{
     color: darkslategrey;
 }
 
-button{
+form button{
     margin: 30px;
     width: 20%;
     height: 35px;
@@ -57,7 +57,7 @@ button{
     
 }
 
-button:hover{
+form button:hover{
     background: linear-gradient(-60deg, rgb(127, 131, 147) 0%, rgb(219, 239, 236) 100%);
     box-shadow: -5px 8px 24px -3px rgb(87 105 189 / 64%);
     color:rgb(34, 36, 38) ;

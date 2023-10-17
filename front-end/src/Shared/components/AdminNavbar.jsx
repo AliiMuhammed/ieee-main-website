@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import imgProfile from "../../Assets/user/user.png";
 import logo from "../../Assets/logos/horizontal logo.png";
 import "../style/AdminNavbar.css";
-import SideMenu from "../../Pages/Admin/components/SideMenu";
+import SideMenu from "../../Pages/Admin/components/Side Menu/SideMenu";
 const AdminNavbar = () => {
   // const admin = getAuthUser();
 

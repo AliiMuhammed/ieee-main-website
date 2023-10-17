@@ -1,18 +1,15 @@
 import { useState } from "react";
-import { FaBars } from "react-icons/fa";
-import "../style/sideMenu.css";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import Offcanvas from "react-bootstrap/Offcanvas";
-
-import { Link, NavLink } from "react-router-dom";
+import imgProfile from "../../../../Assets/user/user.png";
+import "./style/sideMenu.css";
 // import { getAuthUser, removeAuthUser } from "../../../Helper/Storage";
-import { useNavigate } from "react-router-dom";
 import { MdElectricalServices } from "react-icons/md";
 import { IoIosPeople } from "react-icons/io";
 import { AiFillInfoCircle } from "react-icons/ai";
-import { FaPhone } from "react-icons/fa";
+import { FaBars, FaPhone } from "react-icons/fa";
 import { RiDashboardFill } from "react-icons/ri";
-import { AiFillHome } from "react-icons/ai";
-import imgProfile from "../../../Assets/user/user.png";
+import HomeDropDown from "./components/HomeDropDown";
 function SideMenu({ name, ...props }) {
   const [show, setShow] = useState(false);
   const [showSubMenu, setShowSubMenu] = useState(false);
@@ -38,10 +35,7 @@ function SideMenu({ name, ...props }) {
 
   return (
     <>
-      <button
-        onClick={handleShow}
-        className="sideMenu-icon"
-      >
+      <button onClick={handleShow} className="sideMenu-icon">
         <FaBars />
       </button>
       <Offcanvas show={show} onHide={handleClose} {...props}>
@@ -67,12 +61,19 @@ function SideMenu({ name, ...props }) {
                 <span>Ali Muhammed</span>
               </div>
             </div>
+
             <Link to={"/admin"} onClick={handleClose}>
               <div className="icon">
                 <RiDashboardFill />
               </div>
               Statistics
             </Link>
+
+            <HomeDropDown
+              handleClose={handleClose}
+              toggleSubMenu={toggleSubMenu}
+              showSubMenu={showSubMenu}
+            />
             <Link to={"/admin/users"} onClick={handleClose}>
               <div className="icon">
                 <IoIosPeople />
@@ -97,49 +98,6 @@ function SideMenu({ name, ...props }) {
               </div>
               Contact Us
             </Link>
-            <div className="drop-down">
-              <div onClick={toggleSubMenu} className="drop-down-link">
-                <div className="icon">
-                  <AiFillHome />
-                </div>
-                Home
-              </div>
-              <div className={`sub-menu ${showSubMenu ? "open" : ""}`}>
-                <NavLink
-                  to="/admin/dashboard/home/slogan"
-                  onClick={handleClose}
-                >
-                  Slogan
-                </NavLink>
-                <NavLink to="/admin/dashboard/home/video" onClick={handleClose}>
-                  Video
-                </NavLink>
-                <NavLink
-                  to="/admin/dashboard/home/family"
-                  onClick={handleClose}
-                >
-                  Family
-                </NavLink>
-                <NavLink
-                  to="/admin/dashboard/home/achievements"
-                  onClick={handleClose}
-                >
-                  Achievements
-                </NavLink>
-                <NavLink
-                  to="/admin/dashboard/home/partners"
-                  onClick={handleClose}
-                >
-                  Partners
-                </NavLink>
-                <NavLink
-                  to="/admin/dashboard/home/testimonials"
-                  onClick={handleClose}
-                >
-                  Testimonials
-                </NavLink>
-              </div>
-            </div>
           </div>
 
           {/* Authenticated Routes */}

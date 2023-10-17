@@ -5,6 +5,18 @@
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-
     width: 100%;
+    margin-top: 5rem;
+}
+
+/* small */
+@media only screen and (max-width: 767px) {
+    .AdminFooter {
+
+        padding: 3rem 2rem;
+
+        font-size: 1.2rem;
+
+    }
+
 }

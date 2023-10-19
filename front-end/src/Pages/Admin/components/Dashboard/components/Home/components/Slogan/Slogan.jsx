@@ -3,60 +3,60 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 
-// import SloganPopup from "./components/SloganPopup";
+import SloganPopup from "./components/SloganPopup";
 import "./style/slogan.css";
 import MainHeader from "../../../../../../../../Shared/components/MainHeader";
 
 export const Slogan = () => {
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
 
-  return (
-    <>
-      <MainHeader title={"Branch Slogan"} paragraph={"Here you can update slogan"} />
+  // return (
+  //   <>
+  //     <MainHeader title={"Branch Slogan"} paragraph={"Here you can update slogan"} />
 
-      <h2>old slogan</h2>
-      <Button variant="primary" onClick={handleShow}>
-        Change
-      </Button>
+  //     <h2>old slogan</h2>
+  //     <Button variant="primary" onClick={handleShow}>
+  //       Change
+  //     </Button>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Change Slogan</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <h2>old slogan</h2>
-              {/* <Form.Label>old slogan</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="name@example.com"
-                autoFocus
-              /> */}
-            </Form.Group>
-            <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
-              <Form.Label>new slogan</Form.Label>
-              <Form.Control as="textarea" rows={3} />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </>
-  );
+  //     <Modal show={show} onHide={handleClose}>
+  //       <Modal.Header closeButton>
+  //         <Modal.Title>Change Slogan</Modal.Title>
+  //       </Modal.Header>
+  //       <Modal.Body>
+  //         <Form>
+  //           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+  //             <h2>old slogan</h2>
+  //             {/* <Form.Label>old slogan</Form.Label>
+  //             <Form.Control
+  //               type="email"
+  //               placeholder="name@example.com"
+  //               autoFocus
+  //             /> */}
+  //           </Form.Group>
+  //           <Form.Group
+  //             className="mb-3"
+  //             controlId="exampleForm.ControlTextarea1"
+  //           >
+  //             <Form.Label>new slogan</Form.Label>
+  //             <Form.Control as="textarea" rows={3} />
+  //           </Form.Group>
+  //         </Form>
+  //       </Modal.Body>
+  //       <Modal.Footer>
+  //         <Button variant="secondary" onClick={handleClose}>
+  //           Close
+  //         </Button>
+  //         <Button variant="primary" onClick={handleClose}>
+  //           Save Changes
+  //         </Button>
+  //       </Modal.Footer>
+  //     </Modal>
+  //   </>
+  // );
 
   // const [isOpen, setIsOpen] = useState(false);
 
@@ -80,14 +80,16 @@ export const Slogan = () => {
   //   </>
   // );
 
-  // const showPopup = () => {
-  //   return <SloganPopup />;
-  // }
+  const showPopup = () => {
+    return <SloganPopup />;
+  };
 
-  // return (
-  // <>
-  //   <h1>Slogan</h1>
-  //   <Button variant="primary" onClick={showPopup}>Change</Button>{' '}
-  // </>
-  // );
+  return (
+    <>
+      <h1>Slogan</h1>
+      <Button variant="primary" onClick={showPopup}>
+        Change
+      </Button>
+    </>
+  );
 };

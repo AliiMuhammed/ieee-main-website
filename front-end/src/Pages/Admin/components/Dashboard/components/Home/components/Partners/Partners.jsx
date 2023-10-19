@@ -36,6 +36,10 @@ export const Partners = () => {
           setErrorMsg("");
         })
         .catch((err) => {
+          setPartners({
+            ...partners,
+            loading: false,
+          });
           setSuccessMsg("");
           partners.response.length === 0 ? (
             setNotFoundMsg(
@@ -76,6 +80,7 @@ export const Partners = () => {
             setNotFoundMsg={setNotFoundMsg}
             notFoundMsg={notFoundMsg}
           />
+          
         </div>
       </section>
     </>

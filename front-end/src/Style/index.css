@@ -7,6 +7,7 @@
     --main-bg: #182b55;
     --second-bg: #a2a8b8;
     --btns-main-bg-color: #3e648b;
+    --error-color: rgb(173, 0, 0);
     --main-transition: all 0.3s ease-in-out;
     --main-border-radius: 7px;
     --main-line-height: 1.5;
@@ -29,8 +30,9 @@
 body {
     font-family: "Cairo";
     /* Noncompliant; there is no generic font family in the list */
-    background-color: var(--main-bg) !important;
-    color: var(--main-font-color) !important;
+    margin: 0;
+    padding: 0;
+    color: var(--main-font-color);
 }
 
 .container {
@@ -72,6 +74,84 @@ ul {
 a {
     text-decoration: none;
 
+}
+
+.main-btn {
+    padding: 1rem 2rem;
+    background-color: var(--second-font-color);
+    color: var(--main-font-color);
+    font-size: 1.1rem;
+    border: 2px solid transparent;
+    outline: none;
+    border-radius: var(--main-border-radius);
+    -webkit-border-radius: var(--main-border-radius);
+    -moz-border-radius: var(--main-border-radius);
+    -ms-border-radius: var(--main-border-radius);
+    -o-border-radius: var(--main-border-radius);
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.main-btn:hover {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+}
+
+/* small */
+@media only screen and (max-width: 767px) {
+    .main-btn {
+        padding: 0.5rem 1rem;
+    }
+}
+
+.action-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-btns .main-btn {
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+}
+
+.action-btns .main-btn.delete-btn {
+    background-color: var(--error-color);
+    margin-right: 1rem;
+}
+
+.action-btns .main-btn.delete-btn:hover {
+    background-color: var(--hover-color);
+}
+
+.main-btn.add-btn {
+    padding: 0.5rem 2rem;
+}
+
+/* small */
+@media only screen and (max-width: 767px) {
+    .main-btn.add-btn {
+        padding: 0.5rem 1rem;
+    }
+}
+
+.main-modal {
+    color: var(--second-font-color);
+}
+
+.main-spinner.btn-spinner {
+    width: 20px;
+    height: 20px;
+}
+
+.alert-container.container {
+    text-align: center;
+    width: 80%;
 }
 
 /*end glopal rules */

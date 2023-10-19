@@ -29,8 +29,8 @@
 body {
     font-family: "Cairo";
     /* Noncompliant; there is no generic font family in the list */
-    background-color: var(--main-bg);
-    color: var(--main-font-color);
+    background-color: var(--main-bg) !important;
+    color: var(--main-font-color) !important;
 }
 
 .container {

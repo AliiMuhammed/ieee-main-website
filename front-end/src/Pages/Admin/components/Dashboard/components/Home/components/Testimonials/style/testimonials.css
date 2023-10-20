@@ -18,7 +18,7 @@ td img{
     width: 70px;
 }
 
-.table{
+/* .table{
     border-collapse: collapse;
     margin: 25px;
     font-size: 0.9em;
@@ -44,7 +44,7 @@ tbody tr{
 }
 tbody tr:nth-of-type(even){
     background-color: rgb(226, 231, 236);
-}
+} */
 
 .Btn{
     font-weight: 600;
@@ -70,9 +70,7 @@ tbody tr:nth-of-type(even){
     align-self: flex-end;
 }
 
-tbody tr:last-of-type{
-    border-bottom: 3px solid #025f5f;
-}
+
 
 .addModalTest, .editModalTest{
     position: fixed;

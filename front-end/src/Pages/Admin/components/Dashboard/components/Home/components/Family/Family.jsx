@@ -27,7 +27,7 @@ const Family = () => {
   //   function clearInputs() {
   //     document.getElementById('name').value = ''
   //     document.getElementById('profile').value = ''
-  //     document.getElementById('rule').value = ''
+  //     document.getElementById('rule').value = '' 
   //   }
 
   //   // function that works when added new member

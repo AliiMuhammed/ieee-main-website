@@ -50,7 +50,7 @@ const AddPartnerModal = ({
     }
 
     // Clear any previous validation errors
-    setValidationErrors({});
+    
 
     // Continue with the API call
     setPartnerData({ ...partnerData, loading: true });

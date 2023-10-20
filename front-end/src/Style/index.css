@@ -149,9 +149,31 @@ a {
     height: 20px;
 }
 
+.main-spinner.colored-spinner {
+    background-color: var(--main-bg);
+    width: 50px;
+    height: 50px;
+}
+
 .alert-container.container {
     text-align: center;
     width: 80%;
+}
+
+tbody tr:last-of-type {
+    border-bottom: 3px solid var(--main-bg);
+}
+
+
+/* alert style */
+.alert-container.container.successMsg {
+    width: 90%;
+    margin: 1rem auto;
+
+}
+
+.alert-container.container.successMsg .alert {
+    width: 100%;
 }
 
 /*end glopal rules */

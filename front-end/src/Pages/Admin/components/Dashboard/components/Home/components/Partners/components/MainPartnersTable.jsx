@@ -35,11 +35,6 @@ const MainPartnersTable = ({
       .then((res) => {
         setErrorMsg("");
         setSuccessMsg("Partner deleted successfully.");
-        data.length === 0
-          ? setNotFoundMsg(
-              "There is no partners, you can add one form add button."
-            )
-          : setNotFoundMsg("");
         refresh();
       })
       .catch((err) => {

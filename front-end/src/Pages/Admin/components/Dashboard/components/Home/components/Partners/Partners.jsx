@@ -6,12 +6,12 @@ import MainPartnersTable from "./components/MainPartnersTable";
 import axios from "axios";
 import MainSuccess from "./../../../../../../../../Shared/components/MainSuccess";
 import MainError from "../../../../../../../../Shared/components/MainError";
+import MainSpinner from "../../../../../../../../Shared/components/MainSpinner";
 export const Partners = () => {
   const headers = ["Id", "Name", "Image", "Link", "Action"];
 
-  const refreshTable = () => {
-    setPartners({ ...partners, reload: partners.reload + 1 });
-  };
+  const [shouldContinueEffect, setShouldContinueEffect] = useState(true);
+
   const [successMsg, setSuccessMsg] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const [notFoundMsg, setNotFoundMsg] = useState("");
@@ -20,10 +20,13 @@ export const Partners = () => {
     reload: 1,
     loading: false,
   });
-
+  const refreshTable = () => {
+    setPartners({ ...partners, reload: partners.reload + 1 });
+    setShouldContinueEffect(true);
+  };
   // get all partners
   useEffect(() => {
-    if (partners.reload) {
+    if (partners.reload && shouldContinueEffect) {
       setPartners({ ...partners, loading: true });
       axios
         .get("http://localhost:3000/partners")
@@ -41,15 +44,18 @@ export const Partners = () => {
             loading: false,
           });
           setSuccessMsg("");
-          partners.response.length === 0 ? (
+          if (
+            partners.response.length === 0 ||
+            partners.response.length === 1
+          ) {
             setNotFoundMsg(
-              "There is no partners, you can add one from add button."
-            )
-          ) : (
-            <></>
-          );
-
+              "There are no partners, you can add one from the add button."
+            );
+          } else {
+            setErrorMsg("Error cann't load partners.");
+          }
           refreshTable();
+          setShouldContinueEffect(false);
         });
     }
   }, [partners.reload]);
@@ -69,18 +75,22 @@ export const Partners = () => {
           {successMsg.length === 0 && errorMsg.length !== 0 && (
             <MainError msg={errorMsg} className={"successMsg"} />
           )}
-
-          <MainPartnersTable
-            headers={headers}
-            data={partners.response}
-            className={"partners-table"}
-            refresh={refreshTable}
-            setSuccessMsg={setSuccessMsg}
-            setErrorMsg={setErrorMsg}
-            setNotFoundMsg={setNotFoundMsg}
-            notFoundMsg={notFoundMsg}
-          />
-          
+          {/* handle spinner */}
+          {!partners.loading ? (
+            <MainPartnersTable
+              headers={headers}
+              data={partners.response}
+              className={"partners-table"}
+              refresh={refreshTable}
+              setSuccessMsg={setSuccessMsg}
+              setErrorMsg={setErrorMsg}
+              setNotFoundMsg={setNotFoundMsg}
+              notFoundMsg={notFoundMsg}
+              errorMsg={errorMsg}
+            />
+          ) : (
+            <MainSpinner className={"colored-spinner"} />
+          )}
         </div>
       </section>
     </>
